@@ -12,6 +12,8 @@ The current user has a role of "Users". User Role has privileges to access "dash
 # Installation:
 
 Laravel 5.4 Setup
+        
+        composer create-project laravel/laravel="5.4.*" myProject
 
 # Step: 1
 Create UsersController.php and write a query to get user's role. Before that please refer the database tables "user_permissions.sql" for that example. 
@@ -78,7 +80,7 @@ Define angular routes.
     app.config(['$routeProvider', '$locationProvider',
         function($routeProvider, $locationProvider) {
             $routeProvider.
-            when('/manage/dashboard', {
+            when('/dashboard', {
                 templateUrl: 'resources/views/template path',
                 controller: 'Controllername',
                 resolve: {
@@ -93,7 +95,7 @@ Define angular routes.
                     }
                 }
             }).
-            when('/manage/user', {
+            when('/user', {
                 templateUrl: 'resources/views/template path',
                 controller: 'Controllername',
                 resolve: {
@@ -108,7 +110,7 @@ Define angular routes.
                     }
                 }
             }).otherwise({
-                redirectTo: '/manage/dashboard'
+                redirectTo: '/dashboard'
             });
             $locationProvider.html5Mode(true);
         }
